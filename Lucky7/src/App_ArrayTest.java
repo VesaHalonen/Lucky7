@@ -12,39 +12,41 @@ public class App_ArrayTest {
         int saldo = scanner.nextInt();
         scanner.nextLine();
             System.out.println("Paina Enter arpoaksesi numerot...");
-            String aloitus = scanner.nextLine();
-                if (aloitus.equals("")) {
-                    seiskat = arvoluvut(ArvotutLuvutLista);
+                if (saldo>0) {
+                    String aloitus = scanner.nextLine();
+                        if (aloitus.equals("")) {
+                            seiskat = arvoluvut(ArvotutLuvutLista);
+                        }
+                        System.out.println("");
+                                switch (seiskat) {
+                                    case 1:
+                                        System.out.println("Sait yhden seiskan!");
+                                        saldo = saldo + 3;
+                                        break;
+                                    case 2:
+                                        System.out.println("Sait kaksi seiskaa!");
+                                        saldo = saldo + 5;
+                                        break;
+                                    case 3:
+                                        System.out.println("Sait kaksi seiskaa!");
+                                        saldo = saldo + 10;
+                                        break;
+                                    default:
+                                        System.out.println("Voi rähmä, et saanut seiskoja!");
+                                        break;
                 }
-                        switch (seiskat) {
-                            case 1:
-                                System.out.println("");
-                                System.out.println("Sait yhden seiskan!");
-                                saldo = saldo + 3;
-                                break;
-                            case 2:
-                                System.out.println("");
-                                System.out.println("Sait kaksi seiskaa!");
-                                saldo = saldo + 5;
-                                break;
-                            case 3:
-                                System.out.println("");
-                                System.out.println("Sait kaksi seiskaa!");
-                                saldo = saldo + 10;
-                                break;
-                            default:
-                                System.out.println("");
-                                System.out.println("Voi rähmä, et saanut seiskoja!");
-                                break;
+                System.out.println("Saldosi on: " + saldo + " valuuttaa");
+                System.out.println("");
+                System.out.println("Paina Enter pelataksesi uudestaan! Jos haluat keskeyttää pelin, niin paina e ja Enter");
+                scanner = new Scanner(System.in);
+                    String respin = scanner.nextLine();
+                        if (respin.equalsIgnoreCase("")) {
+            }
         }
-        System.out.println("Saldosi on: " + saldo + " valuuttaa");
-        System.out.println("");
-        System.out.println("Paina Enter pelataksesi uudestaan! Jos haluat keskeyttää pelin, niin paina e ja Enter");
-        scanner = new Scanner(System.in);
-            String respin = scanner.nextLine();
-                if (respin.equalsIgnoreCase("")) {
+            else System.out.println("Olet persauki. Lisää pelivaluuttaa.");
+            saldo = scanner.nextInt();
     }
-    }
+        
 //-----Funktio, joka arpoo 3 numeroa Arrayhyn-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------             
                     public static int arvoluvut(int[] numbers) {
                     Random rand = new Random();
@@ -61,4 +63,10 @@ public class App_ArrayTest {
              return seiskat;
     }           
 }
+
+
+
+//JATKOT 
+// Pelin voi pelata uudelleen, saldon vähennys ja tarkistus pelaamisen yhteydessä
+
 
