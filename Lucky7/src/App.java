@@ -8,10 +8,12 @@ public class App {
 
         System.out.println("Pelivaluutan määrä: ");
         int raha = scanner.nextInt();
+        scanner.nextLine();
+            System.out.println("Paina Enter arpoaksesi numerot...");
+            String aloitus = scanner.nextLine();
+                if (aloitus.equals("")) {
 
         while (raha > 0) {
-            System.out.println("Paina Enter arpoaksesi numerot...");
-            scanner.nextLine();
             int numero1 = rand.nextInt(10) + 1;
             int numero2 = rand.nextInt(10) + 1;
             int numero3 = rand.nextInt(10) + 1;
@@ -47,8 +49,14 @@ public class App {
         System.out.println("");
         System.out.println("Saldo: " + raha);
         System.out.println("");
+
+            System.out.println("Haluatko pelata uudestaan? Jos haluat pelata, niin paina Enter");
+            System.out.println("Jos et halua pelata, kirjoita e ja paina Enter.");
+            String jatketaanko = scanner.nextLine();
+            if (jatketaanko.equals("e"))
+            break; {
     }
 }
 }
-
-
+}
+}
